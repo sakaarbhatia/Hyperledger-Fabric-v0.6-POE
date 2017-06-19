@@ -24,6 +24,8 @@ and you would see on your screen:
 Server is listening on port 3000 Connected!  
 You can now access the application from your browser using localhost:3000 
 
+Sample screen :
 
+![alt text](https://github.com/sakaarbhatia/Hyperledger-Fabric-v0.6-POE/blob/master/ui.png)
 
 *For detailed information of APIs to use refer to readme.pdf*
