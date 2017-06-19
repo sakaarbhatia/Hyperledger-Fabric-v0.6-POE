@@ -1,0 +1,93 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="fabricPOE">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric based Proof of Existence</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    
+<style>
+body {
+    margin: 0;
+    background-color: #eeebeb;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #656161;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+
+</style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script><!-- load angular -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="app-service/POE.service.js"></script>
+    <script src="app-service/Flash.service.js"></script>
+    <script src="retreive/retreive.controller.js"></script>
+    <script src="upload/upload.controller.js"></script>
+    <script src="info/info.controller.js"></script>
+    <script src="confirm/confirm.controller.js"></script>
+    
+
+</head>
+<body>
+
+    
+
+
+    <div>
+          <ul class="topnav nav nav-tabs">
+                    <li><a ui-sref="retreive" ng-class="{ active: activeTab == 'retreive' }">Check Hash</a></li>
+                    <li><a ui-sref="upload"  ng-class="{ active: activeTab == 'upload' }">Store Hash</a></li>
+                    <li><a ui-sref="info"  ng-class="{ active: activeTab == 'info' }">Information</a></li>
+                    <li><a ui-sref="confirm"  ng-class="{ active: activeTab == 'confirm' }">Confirm Transaction</a></li>
+                  
+        </ul>
+        <div class="flash-message" ng-if="flash">
+            <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+        </div>
+    </div>
+        
+  
+       <div class="container">
+        <div ui-view></div>
+       </div>
+
+       <footer></footer>
+
+</body>
+</html>

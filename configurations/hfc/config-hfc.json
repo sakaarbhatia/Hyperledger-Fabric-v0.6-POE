@@ -1,0 +1,5 @@
+{
+    "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING",
+    "chaincodeId": "00023030d182c09de987e5e12b6c5124a67d2e1d766333f2564280f59ef33d99",
+    "chainUser": "WebAppAdmin"
+}

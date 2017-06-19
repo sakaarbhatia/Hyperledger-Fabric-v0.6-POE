@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <h3 style="padding-top: 10%;">Check Hash Details</h3>
+        <form>
+            <div class="form-group" style="padding-top: 4%;">
+                <input type="text" name="input" class="form-control input-lg text-center" placeholder="Enter Hash value.." ng-model="vm.searchHash" required>
+            </div>
+            <div style="padding-top: 2%;">
+                <button type="button" ng-disabled="!vm.searchHash" class="btn btn-primary btn-lg" ng-click="vm.getHashDetails()">Check!</button>
+            </div>
+        </form>
+        <div>
+            <div ng-show="vm.resultOK">
+            <h2> Hash Exist on Fabric Blockchain </h2>
+                <h3>Hash: {{vm.foundData.hash}}</h3>
+                <h3>Data: {{vm.foundData.bytes}}</h3>
+            </div>
+            <div ng-show="vm.resultKO">
+                <h3>Hash does not Exist</h3>
+            </div>
+        </div>
+    </div>
+</div>
